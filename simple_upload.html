@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>File Upload</title>
+  </head>
+  <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td{
+    border: 1px solid #abcdef;
+    text-align: center;
+    padding: 8px;
+    color: #53ede6;
+}
+th {
+    border: 1px solid #abcdef;
+    text-align: center;
+    color: white;
+    padding: 8px;
+}
+
+tr:nth-child(1) {
+    background-color: black;
+}
+
+body {
+        color: white;
+}
+h1 {
+        color: #05fab8;
+}
+p {
+        color: #33ff80
+}
+c {
+		color: #53ede6
+}
+  #Navigation
+{
+    text-align: left;
+}
+  
+</style>
+  <body background="{% static 'Login/Landing Page - Start Bootstrap Theme_files/auto0.jpg' %}">
+  <br><br><br><br><br><br><br>
+<fieldset><legend><I><h1>UPLOAD TEMPLATE</h1></I></legend><br><br>
+  <form method="post" enctype="multipart/form-data" align="center">
+    <input type="file" name="myfile">
+    <button type="submit" onclick="clicked(event)">Upload</button>
+    
+    <p>Note: Uploading file name should be TeamName_MockupName.ext (Eg: Validation_Ft). <br> File should not be named as Validation_Ft(1) or any other.</p>
+	<div id=Navigation>
+	<spam>Points to Follow:</spam>
+   <ul>
+   <li>Excel Workbook name should be TeamName_MockupName.ext (Eg: Validation_Ft)</li>
+   <li>Sheet name should be node IP Address (Eg: 172.19.31.10). No of Sheets = No of nodes</li>
+   <li>Create sheets based on number of nodes</li>
+   <li>Copy the template to all the created sheets and name it with IP Address</li>
+   <li>Fill in the asked information, save your workbook and then upload</li>
+   <li>You should not leave empty any required information while uploading</li><br></ul>
+   </div>
+  
+  </form>
+  
+  
+  {% if uploaded_file_url %}
+    <p align="center">File uploaded 
+  {% endif %}
+
+</p><br><br></fieldset>
+
+
+<script type="text/javascript">
+
+function clicked(event)
+{
+    if(!confirm('Are you sure the template you are uploading is the right one? ________ Press OK to continue or Cancel to upload another template'))event.preventDefault();
+}	
+
+
+
+
+</script>
+</body>
+</html>
